@@ -1,0 +1,56 @@
+.main-container {
+    -fx-background-color: #2D2B37;
+    -fx-border-color: #635F75;
+    -fx-border-width: 10;
+}
+
+.label-header-small {
+    -fx-text-fill: #B4A5D4;
+    -fx-font-family: "Trebuchet MS";
+    -fx-font-size: 12px;
+}
+
+.label-data, .label-timer {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Trebuchet MS";
+    -fx-font-size: 24px;
+}
+
+.label-timer {
+    -fx-text-fill: #FF8B94;
+}
+
+.word-bubble {
+    -fx-background-color: #3B3847;
+    -fx-border-color: #635F75;
+    -fx-border-width: 5;
+    -fx-padding: 40;
+    -fx-border-radius: 15; -fx-background-radius: 15;
+}
+
+.word-main {
+    -fx-text-fill: #A8E6CF;
+    -fx-font-family: "Trebuchet MS";
+    -fx-font-size: 36px;
+}
+
+.custom-text-field {
+    -fx-background-color: #4A475A;
+    -fx-text-fill: white;
+    -fx-font-family: "Trebuchet MS";
+    -fx-font-size: 16px;
+}
+
+.label-feedback {
+    -fx-text-fill: #858296;
+    -fx-font-family: "Trebuchet MS";
+    -fx-font-size: 12px;
+}
+
+.primary-button {
+    -fx-background-color: #B4A5D4;
+    -fx-text-fill: #2D2B37;
+    -fx-font-family: "Trebuchet MS";
+    -fx-font-size: 30px;
+    -fx-background-radius: 30; -fx-cursor: hand;
+}

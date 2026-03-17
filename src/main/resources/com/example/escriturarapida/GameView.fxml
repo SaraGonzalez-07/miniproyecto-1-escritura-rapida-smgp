@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<VBox alignment="CENTER" spacing="25.0"
+      styleClass="main-container"
+      stylesheets="@GameStyle.css"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.escriturarapida.controller.GameController">
+    <children>
+
+        <HBox alignment="CENTER" spacing="50.0">
+            <children>
+                <VBox alignment="CENTER">
+                    <Label text="NIVEL" styleClass="label-header-small" />
+                    <Label fx:id="levelLabel" text="01" styleClass="label-data" />
+                </VBox>
+                <VBox alignment="CENTER">
+                    <Label text="TIEMPO" styleClass="label-header-small" />
+                    <Label fx:id="timerLabel" text="00:20" styleClass="label-timer" />
+                </VBox>
+            </children>
+        </HBox>
+
+        <StackPane styleClass="word-bubble">
+            <children>
+                <Label fx:id="wordDisplay" text="¿LISTO?" styleClass="word-main" />
+            </children>
+        </StackPane>
+
+        <VBox alignment="CENTER" spacing="10.0">
+            <children>
+                <TextField fx:id="inputField" alignment="CENTER" promptText="Escribe aquí..." styleClass="custom-text-field" />
+                <Label fx:id="feedbackLabel" text="Presiona JUGAR/ENTER para comenzar" styleClass="label-feedback"
+                       textAlignment="CENTER" alignment="CENTER"/>
+            </children>
+            <padding>
+                <Insets left="40.0" right="40.0" />
+            </padding>
+        </VBox>
+
+        <Button fx:id="actionButton" mnemonicParsing="false" text="JUGAR" styleClass="primary-button" />
+
+    </children>
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+</VBox>
