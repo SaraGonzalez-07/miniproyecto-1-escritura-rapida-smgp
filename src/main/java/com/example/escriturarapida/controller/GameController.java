@@ -93,6 +93,7 @@ public class GameController {
      * Prepares the interface for the next word.
      * <p>
      * Generates a new word from the model, resets the timer, and starts the countdown.
+     * When the timer reaches zero, it automatically triggers the validation process.
      * </p>
      */
     private void loadNewLevel() {
@@ -113,7 +114,7 @@ public class GameController {
                 updateTimerLabel();
 
                 if (secondsLeft <= 0) {
-                    endGame("¡SE ACABÓ EL TIEMPO!");
+                    processWord();
                 }
             }
         }));
@@ -126,6 +127,9 @@ public class GameController {
      * Processes user input and validates it against the current word.
      * <p>
      * Increases difficulty by reducing time every 5 levels and checks for victory.
+     * <p>
+     * If the input does not match, it determines whether the cause was a typing error
+     * or a timeout to trigger the appropriate end-game state.
      * </p>
      */
     private void processWord() {
@@ -134,24 +138,27 @@ public class GameController {
         if (gameWords.checkWord(currentWord, userInput)) {
             currentLevel++;
 
-            if (currentLevel %5==1 && time >2) {
-                time -=2;
+            if (currentLevel % 5 == 1 && time > 2) {
+                time -= 2;
             }
 
             inputField.clear();
             feedbackLabel.setText("¡CORRECTO!");
 
-            if (currentLevel>45){
+            if (currentLevel > 45) {
                 endGame("¡FELICIDADES! HAS COMPLETADO EL JUEGO");
             } else {
                 loadNewLevel();
             }
         } else {
 
-            endGame("¡INCORRECTO!");
+            if (secondsLeft <= 0) {
+                endGame("¡SE ACABÓ EL TIEMPO!");
+            } else {
+                endGame("¡INCORRECTO!");
+            }
         }
     }
-
     /**
      * Terminates the game session and displays a performance summary.
      * <p>
